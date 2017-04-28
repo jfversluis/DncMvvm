@@ -1,0 +1,17 @@
+﻿using Xamarin.Forms;
+
+namespace DncMvvm
+{
+	public partial class DncMvvmPage : ContentPage
+	{
+		public DncMvvmPage()
+		{
+			InitializeComponent();
+
+			var pageModel = new DncMvvmPageModel();
+			pageModel.LabelText = "Hello from the PageModel!";
+
+			BindingContext = pageModel;
+		}
+	}
+}
