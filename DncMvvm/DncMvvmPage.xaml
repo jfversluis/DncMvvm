@@ -4,7 +4,8 @@
 	xmlns:local="clr-namespace:DncMvvm" x:Class="DncMvvm.DncMvvmPage">
 	
 	<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-		<Label Text="{Binding LabelText}" />
+		<Label Text="{Binding LabelText}" Rotation="{Binding Source={x:Reference AngleSlider}, Path=Value}" />
 		<Button Text="Knock, knock..." Command="{Binding KnockCommand}" />
+		<Slider x:Name="AngleSlider" Maximum="180" Minimum="0" />
 	</StackLayout>
 </ContentPage>
