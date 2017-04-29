@@ -11,6 +11,7 @@
 		<Label Text="{Binding LabelText}"
 		TextColor="{Binding LabelText, Converter={StaticResource WhosThereToColorConverter}}" Rotation="{Binding Source={x:Reference AngleSlider}, Path=Value}" />
 		<Button Text="Knock, knock..." Command="{Binding KnockCommand}" />
+		<Button Text="Get me out of here" Command="{Binding NavigateCommand}" />
 		<Slider x:Name="AngleSlider" Maximum="180" Minimum="0" />
 	</StackLayout>
 </ContentPage>

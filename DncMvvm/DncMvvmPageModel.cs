@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel;
+using FreshMvvm;
 using Xamarin.Forms;
 
 namespace DncMvvm
 {
-	public class DncMvvmPageModel : INotifyPropertyChanged
+	public class DncMvvmPageModel : FreshBasePageModel, INotifyPropertyChanged
 	{
 		private string _labelText;
 		public string LabelText
@@ -20,12 +21,18 @@ namespace DncMvvm
 		}
 
 		public Command KnockCommand { get; }
+		public Command NavigateCommand { get; }
 
 		public DncMvvmPageModel()
 		{
 			KnockCommand = new Command(() =>
 			{
 				LabelText = "Who's there?";
+			});
+
+			NavigateCommand = new Command(() =>
+			{
+				CoreMethods.PushPageModel<AnotherPageModel>("Another PageModel by navigation");
 			});
 		}
 

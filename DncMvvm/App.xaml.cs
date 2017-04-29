@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using FreshMvvm;
 
 namespace DncMvvm
 {
@@ -8,7 +9,13 @@ namespace DncMvvm
 		{
 			InitializeComponent();
 
-			MainPage = new DncMvvmPage();
+			var tabbedPage = new FreshTabbedNavigationContainer();
+
+			// Sorry about the horrible looking icon sizes...
+			tabbedPage.AddTab<DncMvvmPageModel>("Home", "icon.png");
+			tabbedPage.AddTab<AnotherPageModel>("Another", "anothericon.png");
+
+			MainPage = tabbedPage;
 		}
 
 		protected override void OnStart()
